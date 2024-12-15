@@ -204,6 +204,9 @@ import_code                            string     Allows advanced users to suppl
                                                   See "Custom routers and authenticators" below. Custom routers ignore any
                                                   data in the ``configs`` section, and custom authenticators ignore any
                                                   data in the ``smtp.auth`` section.
+prefer_plain                           bool       Prefer the plain text email type over html (when available).
+
+                                                  Defaults to False.
 listen.host                            string     Specifies the network address to listen on.
 
                                                   Defaults to all interfaces.
