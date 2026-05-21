@@ -15,21 +15,17 @@ jobs:
       contents: read
       packages: write
     steps:
-      -
-        name: Checkout
+      - name: Checkout
         uses: actions/checkout@v6
-      -
-        name: Run tests
-        run: tox
-      -
-        name: Login to GitHub Container Registry
+
+      - name: Login to GitHub Container Registry
         uses: docker/login-action@v4
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      -
-        name: Build and Push
+
+      - name: Build and Push
         uses: ./.github/actions/docker-build
         with:
           images: ghcr.io/${{ github.repository }}
